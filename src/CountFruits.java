@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class CountFruits {
 
   public static HashMap<Character, Integer>  getCharacterMap(){
-    HashMap<Character, Integer> charCounts = new HashMap<Character, Integer>() {
+    return new HashMap<>() {
       {
         put('A', 0);put('B', 0);put('C', 0);put('D', 0);
         put('E', 0);put('F', 0);put('G', 0);put('H', 0);
@@ -13,7 +13,6 @@ public class CountFruits {
         put('U', 0);put('V', 0);put('W', 0);put('X', 0);
         put('Y', 0);put('Z', 0);
       }};
-    return charCounts;
   }
 
   public static HashMap<Character, Integer> getCharacterCount(String[] fruits ){
@@ -34,8 +33,6 @@ public class CountFruits {
             "Blueberry", "Grape", "Jackfruit", "Pomegranate", "Apple", "Pear",
             "Orange", "Watermelon", "Raspberry", "Banana"};
     HashMap<Character, Integer> charCounts = getCharacterCount(fruits);
-    charCounts.entrySet().forEach(entry -> {
-      System.out.println(entry.getKey() + ": " + entry.getValue());
-    });
+    charCounts.forEach((key, value) -> System.out.println(key + ": " + value));
   }
 }
